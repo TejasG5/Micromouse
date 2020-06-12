@@ -11,5 +11,5 @@ steps_in_one_rev = 360/step_angle
 total_revolutions = distance/cir
 total_steps = steps_in_one_rev * total_revolutions
 print("The number of steps are " + str(total_steps))  
-print(str(total_revolutions))
+
 
