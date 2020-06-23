@@ -38,13 +38,13 @@ steps = distance / distIn1Step
 print("Steps: "+str(steps))
 
 #to display step angle for right wheel
-font = pygame.font.SysFont("Comic Sans MS",40)
+font = pygame.font.SysFont("Times New Roman",40)
 text1 = font.render(str(stepAngle),True,(255,255,255))
 screen.blit(text1,(900,95))
 
 #to display diameter for right wheel
 text2 = font.render(str(diameter),True,(255,255,255))
-screen.blit(text2,(925,175))
+screen.blit(text2,(925,177))
 
 #to display step angle for left wheel
 text3 = font.render(str(stepAngle),True,(255,255,255))
@@ -52,7 +52,7 @@ screen.blit(text3,(900,365))
 
 #to display wheel diameter for left wheel
 text4 = font.render(str(diameter),True,(255,255,255))
-screen.blit(text4,(925,445))
+screen.blit(text4,(925,447))
 
 
 
@@ -67,12 +67,12 @@ while not done:
 
     if count < steps:
         #To display steps
-        font1 = pygame.font.SysFont('Bahnschrift', 42)
+        font1 = pygame.font.SysFont('Times New Roman', 42)
         text5 = font1.render(str(count + 1), False, (255, 255, 255), (	153, 0, 255))
-        screen.blit(text5, (460, 160))
+        screen.blit(text5, (455, 160))
 
         text6 = font1.render(str(count+1),True,(255,255,255),(	153, 0, 255))
-        screen.blit(text6,(460,406))
+        screen.blit(text6,(455,406))
 
         time.sleep(0.3)
         #To rotate wheel
@@ -86,16 +86,24 @@ while not done:
         distanceTravelled = round(distanceTravelled, 3)
 
         # To Show Text: Distance Travelled
-        font2 = pygame.font.SysFont('Comic Sans MS', 40)
+        font2 = pygame.font.SysFont('Times New Roman', 40)
         text7 = font2.render(str(distanceTravelled), False, (255, 255, 255),(	153, 0, 255))
-        screen.blit(text7,(810,533))
+        screen.blit(text7,(810,535))
+        
+        #To show status 
+        font3 = pygame.font.SysFont("Times New Roman", 50, False, True)
+        text8 = font3.render("Travelling...", True, (0, 0, 0),(217,217,217))
+        screen.blit(text8, (385, 260))
+
         pygame.display.update()
 
         time.sleep(0.01)
 
     else:
-
+        text8 = font3.render("REACHED  ", True, (255,0,0),(217,217,217))
+        screen.blit(text8, (385, 260))
         pygame.display.update()
 
 print("Reached")
 pygame.quit()
+
